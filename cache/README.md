@@ -1,1 +1,0 @@
-This is were the hack files will be cached to

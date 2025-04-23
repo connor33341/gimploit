@@ -7,6 +7,7 @@ import fs from 'fs';
 import terser from '@rollup/plugin-terser';
 import makeBookmarklet from './makeBookmarket.js';
 import nodePolyfills from 'rollup-plugin-polyfill-node';
+import json from "@rollup/plugin-json";
 
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
 const full = process.argv.includes('full');
@@ -69,6 +70,7 @@ export default {
             include: ['node_modules/**'],
             sourceMap: true
         }),
+        json(),
         resolve({
             browser: true,
             exportConditions: ['svelte'],
