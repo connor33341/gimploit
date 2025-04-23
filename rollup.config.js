@@ -6,6 +6,7 @@ import metablock from 'rollup-plugin-userscript-metablock';
 import fs from 'fs';
 import terser from '@rollup/plugin-terser';
 import makeBookmarklet from './makeBookmarket.js';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
 const full = process.argv.includes('full');
@@ -64,10 +65,17 @@ export default {
                 css: 'injected'
             },
         }),
+        nodePolyfills({
+            include: ['node_modules/**'],
+            sourceMap: true
+        }),
         resolve({
             browser: true,
             exportConditions: ['svelte'],
             extensions: ['.svelte', '.js', '.ts', '.json']
-        })
+        }),
+    ],
+    external: [
+        'colyseus.js/lib/Protocol.js'
     ]
 }

@@ -2,6 +2,14 @@
     "compilerOptions": {
         "target": "ESNext",
         "lib": ["ESNext", "dom", "DOM.Iterable"],
-        "module": "ESNext"
+        "module": "ESNext",
+        "baseUrl": ".",
+        "paths": {
+            "colyseus.js/*": ["node_modules/colyseus.js/*"]
+        },
+        "types": ["node"],
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
     }
 }
