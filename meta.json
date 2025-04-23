@@ -1,0 +1,16 @@
+{
+	"name": "Gimkit Cheat",
+	"namespace": "https://www.github.com/connor33341/gimploit",
+	"match": [
+		"https://www.gimkit.com/join*"
+	],
+	"run-at": "document-start",
+	"description": "userscript",
+	"iconURL": "https://www.gimkit.com/favicon.png",
+	"author": "connor33341, TheLazySquid, VillansRule",
+	"grant": [
+		"GM_getValue",
+		"GM_setValue",
+		"GM_deleteValue"
+	]
+}

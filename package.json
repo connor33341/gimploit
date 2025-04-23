@@ -1,0 +1,42 @@
+{
+  "name": "gimploit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "bun src/main.js",
+    "dev": "bun --watch src/main.js",
+    "build": "rollup -c -w full"
+  },
+  "keywords": [],
+  "author": "connor33341<connor@connor33341.dev>",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.4",
+  "dependencies": {
+    "@colyseus/schema": "^3.0.35",
+    "@msgpack/msgpack": "^3.1.1",
+    "axios": "^1.8.4",
+    "colyseus.js": "^0.16.16",
+    "debounce": "^2.2.0",
+    "express": "^5.1.0",
+    "svelte": "^5.28.2"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "msgpackr-extract"
+    ],
+    "onlyBuiltDependencies": [
+      "msgpack",
+      "msgpackr-extract"
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.40.0",
+    "rollup-plugin-svelte": "^7.2.2",
+    "rollup-plugin-userscript-metablock": "^0.4.2"
+  }
+}
