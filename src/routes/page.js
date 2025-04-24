@@ -13,7 +13,7 @@ export default async (_req, res, path) => {
         });
 
         request.data = request.data.replace(`<head>`, `<head>
-            <script>${fs.readFileSync("build/bundle.min.js", 'utf-8')}</script>`);
+            <script>${fs.readFileSync("build/bundle.js", 'utf-8')}</script>`);
 
         request.data = request.data.replace(`content="https://www.gimkit.com">`, `content="https://www.gimkit.com"><script>document.querySelector('meta[property="cdn-map-assets-url"]').content = location.origin</script>`)
 
