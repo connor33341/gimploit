@@ -36,7 +36,16 @@ let otherOutputs = [
         file: 'build/bundle.bookmarklet.txt',
         format: 'iife',
         plugins: [
-            terser(),
+            terser({
+                compress: {
+                    drop_console: true,
+                    drop_debugger: true,
+                    passes: 4
+                },
+                mangle: {
+                    toplevel: true
+                }
+            }),
             makeBookmarklet()
         ]
     },

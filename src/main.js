@@ -4,9 +4,6 @@ import fs from 'node:fs';
 
 import paths from './paths.js';
 
-let script = await axios.get(`https://raw.githubusercontent.com/TheLazySquid/GimkitCheat/main/build/bundle.js`);
-fs.writeFileSync(import.meta.dirname + '/bundle.txt', script.data);
-
 const app = express();
 
 app.use(express.json());
@@ -22,4 +19,4 @@ app.all(`/*`, async (req, res) => {
     await (await import(`./routes/${file.handler}.js`)).default(req, res, path);
 });
 
-app.listen(6060, () => console.log(`gimmick @ http://localhost:6060`));
+app.listen(6060, () => console.log(`http://localhost:6060`));
