@@ -1,23 +1,27 @@
 // Based off of gimmick/src/path.js
 export default [
     {
-        match: /\.(png|jpg|jpeg|svg|webm|ico|gif|ttf|otf|atlas)$/,
+        match: /^\/config\/[^/]+\.json$/,
+        handler: 'config'
+    },
+    {
+        match: /(.*?)\.(png|jpg|jpeg|svg|webm|ico|gif|ttf|otf|atlas)/,
         handler: 'content'
     },
     {
-        match: /\.(mp3|mp4|m4a)$/,
+        match: /(.*?)\.(mp3|mp4|m4a)/,
         handler: 'audio'
     },
     {
-        match: /\.(js|json|css)/,
+        match: /(.*?)\.(js|json|css)(.*?)/,
         handler: 'static'
     },
     {
-        match: /^\/(pages|api)\//,
+        match: /(pages|api)\/(.*?)/,
         handler: 'static'
     },
     {
-        match: /^\/$/,
+        match: /(\/|)/,
         handler: 'page'
     }
 ];
