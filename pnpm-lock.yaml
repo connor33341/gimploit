@@ -29,6 +29,9 @@ importers:
       express:
         specifier: ^5.1.0
         version: 5.1.0
+      path-to-regexp:
+        specifier: ^8.2.0
+        version: 8.2.0
       schema^2.0.26:
         specifier: link:@colyseus/schema^2.0.26
         version: link:@colyseus/schema^2.0.26
